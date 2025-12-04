@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Event </title>
+</head>
+<body onload="welcomeMessage()">
+
+<h1>Practice:HTML Events </h1>
+
+<script>
+  function welcomeMessage() {
+    alert("Welcome to my page!");
+  }
+
+  function changeText(id) {
+    document.getElementById(id).innerHTML = "You clicked me!";
+  }
+
+  function showMouseOver(id) {
+    document.getElementById(id).style.backgroundColor = "#eef";
+  }
+
+  function resetMouseOut(id) {
+    document.getElementById(id).style.backgroundColor = "";
+  }
+
+  function checkForm(form) {
+    alert("Form submitted: " + form.name.value);
+    return false;  // prevent actual submission for practice
+  }
+
+  function keyPressed(evt) {
+    console.log("Key pressed code:", evt.keyCode);
+  }
+</script>
+
+<!-- 1. Click Event -->
+<button onclick="changeText('p1')">Click me</button>
+<p id="p1">This text will change on click.</p>
+
+<!-- 2. Mouseover & Mouseout -->
+<div onmouseover="showMouseOver('box')" onmouseout="resetMouseOut('box')"
+     style="width:200px; height:80px; border:1px solid black; margin:10px;">
+  Hover over me (background will change)
+</div>
+
+<!-- 3. Keyboard event on input -->
+<label>Type here: </label>
+<input type="text" onkeypress="keyPressed(event)" placeholder="Press any key">
+
+<!-- 4. Form with onsubmit -->
+<form onsubmit="return checkForm(this)">
+  <label>Name: <input type="text" name="name" required></label><br><br>
+  <input type="submit" value="Submit Form">
+  <input type="reset" value="Reset">
+</form>
+
+<!-- 5. Double-click event -->
+<p ondblclick="alert('You double-clicked this paragraph!')">
+  Double click this paragraph.
+</p>
+
+
+
+</body>
+</html>

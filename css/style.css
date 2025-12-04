@@ -1,0 +1,190 @@
+/* body */
+body{
+  background: #eee;
+}
+
+
+h1{
+  color: blue;
+}
+
+
+/* class selector boxes */
+.a{
+  background: red;
+  width: 100px;
+  height: 80px;
+}
+
+.b{
+  background: green;
+  width: 120px;
+  height: 80px;
+}
+
+.c{
+  background: orange;
+  width: 140px;
+  height: 80px;
+}
+
+/* id selector */
+#box1{
+  background: purple;
+  color: white;
+  width: 130px;
+  height: 60px;
+}
+
+#box2{
+  background: brown;
+  color: white;
+  width: 150px;
+  height: 60px;
+}
+
+/* paragraphs */
+.p1{
+  color: purple;
+  font-size: 20px;
+}
+
+.p2{
+  color: brown;
+  font-size: 14px;
+}
+
+.p3{
+  color: darkgreen;
+  font-size: 18px;
+}
+
+/* button */
+.btn1{
+  padding: 5px;
+}
+
+.btn2{
+  padding: 5px;
+}
+
+.btn2:hover{
+  background: black;
+  color: white;
+}
+
+/* position */
+.r1{
+  position: relative;
+  left: 20px;
+  background: pink;
+  width: 100px;
+}
+
+.a1{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: black;
+  color: white;
+}
+
+/* flex */
+.flex1{
+  display: flex;
+  gap: 10px;
+}
+
+.f{
+  background: skyblue;
+  padding: 20px;
+}
+
+.flex2{
+  display: flex;
+  justify-content: center;
+}
+
+.f2{
+  background: yellow;
+  margin: 5px;
+  padding: 15px;
+}
+
+/* grid */
+.grid1{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+}
+
+.g{
+  background: violet;
+  padding: 20px;
+}
+
+/* border radius */
+.round{
+  width: 80px;
+  height: 80px;
+  background: teal;
+  border-radius: 50%;
+}
+
+/* shadow */
+.shadow{
+  width: 120px;
+  height: 60px;
+  background: white;
+  box-shadow: 2px 2px 10px black;
+}
+
+/* animation*/
+.move{
+  width: 60px;
+  height: 60px;
+  background: red;
+  animation: go 2s infinite;
+}
+
+@keyframes go{
+  from{ transform: translateX(0px); }
+  to{ transform: translateX(200px); }
+}
+
+/* input */
+.in1{
+  padding: 5px;
+  border: 2px solid red;
+}
+
+/* image */
+.img1{
+  width: 80px;
+}
+
+.img2{
+  width: 150px;
+  border-radius: 50%;
+}
+
+/* new more class */
+.card{
+  width: 120px;
+  background: lightblue;
+  padding: 10px;
+}
+
+.text1{
+  color: red;
+}
+
+.text2{
+  color: blue;
+}
+
+.boxbig{
+  width: 200px;
+  height: 100px;
+  background: gray;
+}
