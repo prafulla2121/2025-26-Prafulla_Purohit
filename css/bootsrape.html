@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>satva type site</title>
+  <title>bootstrap full practice</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Prafulla-Team</a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#x">
+    <a class="navbar-brand" href="#">PrafullaSite</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="x">
+    <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#">home</a></li>
         <li class="nav-item"><a class="nav-link" href="#">about</a></li>
@@ -22,112 +24,203 @@
     </div>
   </div>
 </nav>
+
 <div class="container mt-4">
-  <div class="row">
-    <div class="col-md-6">
-      <h2>we build software</h2>
- <p>we are working on website app android ios and many more things for companies and startups 
-    and students also we train and develop everything</p>
-  <button class="btn btn-primary">get start</button>
-     <button class="btn btn-outline-dark">contact</button>
-    </div>
-    <div class="col-md-6">
-      <div class="bg-secondary text-white p-4">image here</div>
+
+<h2>buttons</h2>
+<button class="btn btn-primary">primary</button>
+<button class="btn btn-secondary">secondary</button>
+<button class="btn btn-success">success</button>
+<button class="btn btn-danger">danger</button>
+<button class="btn btn-warning">warning</button>
+<button class="btn btn-info">info</button>
+<button class="btn btn-light">light</button>
+<button class="btn btn-dark">dark</button>
+<button class="btn btn-outline-primary">outline</button>
+
+<hr>
+
+<h2>alerts</h2>
+<div class="alert alert-primary">primary alert</div>
+<div class="alert alert-success">success alert</div>
+<div class="alert alert-danger">danger alert</div>
+<div class="alert alert-warning">warning alert</div>
+
+<hr>
+
+<h2>badges</h2>
+<h4>messages <span class="badge bg-danger">5</span></h4>
+
+<hr>
+
+<h2>cards</h2>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">simple card</div>
     </div>
   </div>
-
-  <hr>
-
-  <h3 class="text-center mt-3">our services</h3>
-  <div class="row mt-3">
-    <div class="col-md-4">
-      <div class="border p-3">
-        <p>we make websites with html css js react</p>
-        <button class="btn btn-sm btn-dark">more</button>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="border p-3">
-        <h5>app dev</h5>
-        <p>android app ios app flutter react native</p>
-        <button class="btn btn-sm btn-dark">more</button>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="border p-3">
-        <h5>ai project</h5>
-        <p>ml ai python deep learning models</p>
-        <button class="btn btn-sm btn-dark">more</button>
-      </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header">header</div>
+      <div class="card-body">body</div>
+      <div class="card-footer">footer</div>
     </div>
   </div>
-  <hr>
-  <h3 class="mt-4">about us</h3>
-  <p>we are students and developers working together building real products and helping business grow in digital 
-    world from india and working worldwide we do projects 
-    also for college final year</p>
-  <div class="row">
-    <div class="col-md-3 mt-2">
-      <div class="bg-light p-2">10+ projects</div>
-    </div>
-    <div class="col-md-3 mt-2">
-      <div class="bg-light p-2">5 team</div>
-    </div>
-    <div class="col-md-3 mt-2">
-      <div class="bg-light p-2">clients</div>
-    </div>
-    <div class="col-md-3 mt-2">
-      <div class="bg-light p-2">support</div>
+</div>
+
+<hr>
+
+<h2>list group</h2>
+<ul class="list-group w-50">
+  <li class="list-group-item">item one</li>
+  <li class="list-group-item active">item two</li>
+  <li class="list-group-item">item three</li>
+</ul>
+
+<hr>
+
+<h2>table</h2>
+<table class="table table-bordered table-striped">
+<tr><th>id</th><th>name</th></tr>
+<tr><td>1</td><td>a</td></tr>
+<tr><td>2</td><td>b</td></tr>
+</table>
+
+<hr>
+
+<h2>progress</h2>
+<div class="progress w-50">
+  <div class="progress-bar" style="width:40%">40%</div>
+</div>
+
+<hr>
+
+<h2>spinner</h2>
+<div class="spinner-border"></div>
+<div class="spinner-grow text-success"></div>
+
+<hr>
+
+<h2>accordion</h2>
+<div class="accordion" id="a1">
+  <div class="accordion-item">
+    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#c1">question</button>
+    <div id="c1" class="accordion-collapse collapse show">
+      <div class="accordion-body">answer</div>
     </div>
   </div>
+</div>
 
-  <hr>
+<hr>
 
-  <h3 class="mt-4">contact us</h3>
+<h2>form</h2>
+<input class="form-control" placeholder="name">
+<select class="form-select mt-2"><option>one</option><option>two</option></select>
+<div class="form-check mt-2">
+  <input class="form-check-input" type="checkbox">
+  <label class="form-check-label">check</label>
+</div>
+<button class="btn btn-success mt-2" data-bs-toggle="modal" data-bs-target="#m1">submit</button>
 
-  <div class="row">
-    <div class="col-md-6">
-      <input class="form-control mt-2" placeholder="name">
-      <input class="form-control mt-2" placeholder="email">
-      <input class="form-control mt-2" placeholder="phone">
-      <textarea class="form-control mt-2" placeholder="message"></textarea>
-      <button class="btn btn-success mt-2">send</button>
-    </div>
+<hr>
 
-    <div class="col-md-6">
-      <div class="bg-dark text-white p-4 mt-2">
-        address india<br>
-        email test@gmail.com<br>
-        phone 99999999
-      </div>
-    </div>
-  </div>
-
-  <hr>
-
-  <h3>team</h3>
-  <div class="row">
-    <div class="col-md-3">
-      <div class="border p-2">dev 1</div>
-    </div>
-    <div class="col-md-3">
-      <div class="border p-2">dev 2</div>
-    </div>
-    <div class="col-md-3">
-      <div class="border p-2">dev 3</div>
-    </div>
-    <div class="col-md-3">
-      <div class="border p-2">dev 4</div>
+<h2>modal</h2>
+<div class="modal fade" id="m1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"><h5>modal</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">hello</div>
     </div>
   </div>
+</div>
+
+<hr>
+
+<h2>offcanvas</h2>
+<button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#off">open</button>
+<div class="offcanvas offcanvas-start" id="off">
+  <div class="offcanvas-header"><h5>menu</h5><button class="btn-close" data-bs-dismiss="offcanvas"></button></div>
+  <div class="offcanvas-body">links here</div>
+</div>
+
+
+<hr>
+
+<h2>dropdowns</h2>
+<div class="dropdown mb-3">
+  <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">select option</button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">option 1</a></li>
+    <li><a class="dropdown-item" href="#">option 2</a></li>
+    <li><a class="dropdown-item" href="#">option 3</a></li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>pagination</h2>
+<nav>
+<ul class="pagination">
+  <li class="page-item"><a class="page-link" href="#">1</a></li>
+  <li class="page-item active"><a class="page-link" href="#">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+</ul>
+</nav>
+
+<hr>
+
+<h2>breadcrumb</h2>
+<nav>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#">home</a></li>
+  <li class="breadcrumb-item"><a href="#">library</a></li>
+  <li class="breadcrumb-item active">data</li>
+</ol>
+</nav>
+
+<hr>
+
+<h2>toast</h2>
+<button class="btn btn-info" onclick="showToast()">show toast</button>
+<div class="toast position-fixed bottom-0 end-0 m-3" id="t1">
+  <div class="toast-header">message</div>
+  <div class="toast-body">this is toast example</div>
+</div>
+
+<hr>
+
+<h2>carousel</h2>
+<div id="car" class="carousel slide w-50" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active"><div class="bg-secondary text-white p-5">slide 1</div></div>
+    <div class="carousel-item"><div class="bg-dark text-white p-5">slide 2</div></div>
+    <div class="carousel-item"><div class="bg-primary text-white p-5">slide 3</div></div>
+  </div>
+  <button class="carousel-control-prev" data-bs-target="#car" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+  <button class="carousel-control-next" data-bs-target="#car" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+</div>
+
+<hr>
+
+<h2>utilities</h2>
+<div class="p-3 mb-2 bg-warning">padding background</div>
+<div class="text-center fw-bold">center text bold</div>
+<div class="d-flex justify-content-between bg-light p-2">
+  <div>left</div><div>right</div>
+</div>
 
 </div>
 
-<footer class="bg-dark text-white text-center mt-4 p-3">
-  copyright 2025 satva type site
-</footer>
+<script>
+function showToast(){
+  var t = new bootstrap.Toast(document.getElementById('t1'));
+  t.show();
+}
+</script>
+
+<footer class="bg-dark text-white text-center mt-4 p-3">practice page</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

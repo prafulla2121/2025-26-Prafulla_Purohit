@@ -46,10 +46,7 @@ console.log(addnum(3,6))
 function hi(nam){return "hi "+nam}
 console.log(hi("prafulla"))
 
-let btn=document.getElementById("btn")
-btn.onclick=function(){
-console.log("clicked")
-}
+
 
 let marks=[41,52,63,78]
 let totl=0
@@ -63,10 +60,6 @@ else console.log("minor")
 let carData={brand:"BMW",model:"X5",year:2020}
 for(let k2 in carData){console.log(k2,carData[k2])}
 
-let run=document.getElementById("runExamples")
-run.onclick=function(){
-document.getElementById("output").innerText="check console"
-}
 
 let a1 = 5; let a2 = 7; console.log(a1*a2)
 let a3 = 2; a3 += 3; console.log(a3)
@@ -146,61 +139,3 @@ default: console.log("none")
 
 for(let s of ["red","blue","green"]){console.log(s)}
 
-let e = document.createElement("p")
-e.innerText = "Dynamic text"
-document.body.appendChild(e)
-
-let inp = document.createElement("input")
-document.body.appendChild(inp)
-inp.onkeyup=function(){console.log("typed: "+inp.value)}
-
-let showName=document.getElementById("showName")
-showName.onclick=function(){
-let v=document.getElementById("nameBox").value
-document.getElementById("nameResult").innerText=v
-}
-
-let colorBtn=document.getElementById("colorBtn")
-colorBtn.onclick=function(){
-document.body.style.backgroundColor="rgb("+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+")"
-}
-
-let addItem=document.getElementById("addItem")
-addItem.onclick=function(){
-let li=document.createElement("li")
-li.innerText="item"+Math.floor(Math.random()*100)
-document.getElementById("listBox").appendChild(li)
-}
-
-let changeImg=document.getElementById("changeImg")
-changeImg.onclick=function(){
-document.getElementById("img1").src="https://via.placeholder.com/150"
-}
-
-let changeText=document.getElementById("changeText")
-changeText.onclick=function(){
-document.getElementById("text1").innerText="new text added"
-}
-
-let toggleBox=document.getElementById("toggleBox")
-toggleBox.onclick=function(){
-let b=document.getElementById("box")
-b.style.display=b.style.display=="none"?"block":"none"
-}
-
-let loginBtn=document.getElementById("loginBtn")
-loginBtn.onclick=function(){
-let e=document.getElementById("email").value
-let p=document.getElementById("pass").value
-if(e==""||p=="") document.getElementById("loginResult").innerText="fill all"
-else document.getElementById("loginResult").innerText="ok"
-}
-
-let numsx=[2,4,6,8]
-for(let q=0;q<numsx.length;q++){console.log(numsx[q]*3)}
-
-let randWords=["sun","moon","sky","tree"]
-console.log(randWords[Math.floor(Math.random()*randWords.length)])
-
-function greet(n){return "welcome "+n}
-console.log(greet("user"))

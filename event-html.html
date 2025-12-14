@@ -2,66 +2,104 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>HTML Event </title>
+  <title>HTML Events Practice</title>
+  <style>
+    body{
+      font-family: Arial;
+      background:#f4f4f4;
+      padding:20px;
+    }
+
+    h1{
+      text-align:center;
+      background:#673ab7;
+      color:white;
+      padding:10px;
+    }
+
+    .box{
+      background:white;
+      padding:15px;
+      margin-bottom:20px;
+      border-left:5px solid #673ab7;
+    }
+
+    button{
+      padding:6px 12px;
+      background:#2196f3;
+      color:white;
+      border:none;
+    }
+
+    input{
+      padding:6px;
+    }
+  </style>
 </head>
 <body onload="welcomeMessage()">
 
-<h1>Practice:HTML Events </h1>
+<h1>HTML Events Practice</h1>
 
 <script>
-  function welcomeMessage() {
-    alert("Welcome to my page!");
+  function welcomeMessage(){
+    alert('Welcome to my page');
   }
 
-  function changeText(id) {
-    document.getElementById(id).innerHTML = "You clicked me!";
+  function changeText(id){
+    document.getElementById(id).innerHTML = 'You clicked the button';
   }
 
-  function showMouseOver(id) {
-    document.getElementById(id).style.backgroundColor = "#eef";
+  function mouseOver(id){
+    document.getElementById(id).style.backgroundColor = '#e1bee7';
   }
 
-  function resetMouseOut(id) {
-    document.getElementById(id).style.backgroundColor = "";
+  function mouseOut(id){
+    document.getElementById(id).style.backgroundColor = '';
   }
 
-  function checkForm(form) {
-    alert("Form submitted: " + form.name.value);
-    return false;  // prevent actual submission for practice
+  function formSubmit(f){
+    alert('Form submitted by ' + f.name.value);
+    return false;
   }
 
-  function keyPressed(evt) {
-    console.log("Key pressed code:", evt.keyCode);
+  function keyPress(e){
+    console.log(e.key);
   }
 </script>
 
-<!-- 1. Click Event -->
+<div class="box">
+<h2>Click Event</h2>
 <button onclick="changeText('p1')">Click me</button>
-<p id="p1">This text will change on click.</p>
-
-<!-- 2. Mouseover & Mouseout -->
-<div onmouseover="showMouseOver('box')" onmouseout="resetMouseOut('box')"
-     style="width:200px; height:80px; border:1px solid black; margin:10px;">
-  Hover over me (background will change)
+<p id="p1">Text will change after click</p>
 </div>
 
-<!-- 3. Keyboard event on input -->
-<label>Type here: </label>
-<input type="text" onkeypress="keyPressed(event)" placeholder="Press any key">
+<div class="box">
+<h2>Mouse Over and Mouse Out</h2>
+<div id="box1" onmouseover="mouseOver('box1')" onmouseout="mouseOut('box1')"
+     style="width:200px;height:80px;border:1px solid black;">
+  Move mouse here
+</div>
+</div>
 
-<!-- 4. Form with onsubmit -->
-<form onsubmit="return checkForm(this)">
-  <label>Name: <input type="text" name="name" required></label><br><br>
-  <input type="submit" value="Submit Form">
-  <input type="reset" value="Reset">
+<div class="box">
+<h2>Keyboard Event</h2>
+<input type="text" onkeypress="keyPress(event)" placeholder="type something">
+</div>
+
+<div class="box">
+<h2>Form Submit Event</h2>
+<form onsubmit="return formSubmit(this)">
+  <input type="text" name="name" placeholder="enter name" required><br><br>
+  <input type="submit" value="submit">
 </form>
+</div>
 
-<!-- 5. Double-click event -->
-<p ondblclick="alert('You double-clicked this paragraph!')">
-  Double click this paragraph.
+<div class="box">
+<h2>Double Click Event</h2>
+<p ondblclick="alert('paragraph double clicked')">
+  Double click this text
 </p>
-
-
+</div>
 
 </body>
 </html>
