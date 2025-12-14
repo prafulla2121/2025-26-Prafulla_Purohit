@@ -1,49 +1,221 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JS</title>
+  <title>JS full practice</title>
+
+  <style>
+    body{
+      font-family: Arial;
+      background:#f2f2f2;
+      padding:20px;
+    }
+
+    h1{
+      color:#333;
+    }
+
+    section{
+      background:rgb(56, 81, 104);
+      padding:15px;
+      margin-bottom:20px;
+      border-radius:6px;
+      box-shadow:0 0 5px rgba(0,0,0,0.1);
+    }
+
+    button{
+      padding:6px 12px;
+      margin-top:5px;
+      cursor:pointer;
+    }
+
+    input{
+      padding:5px;
+      margin:5px 0;
+    }
+
+    #box{
+      width:100px;
+      height:100px;
+      background:lightblue;
+      margin-top:10px;
+    }
+
+    img{
+      width:120px;
+      display:block;
+      margin-top:10px;
+    }
+
+    .red{color:red}
+    .green{color:green}
+  </style>
 </head>
+
 <body>
 
-<h1>JS Practice</h1>
+<h1>JS Practice Page</h1>
 
-<button id="btn">Click Event</button>
-<button id="runExamples">Run Examples</button>
-<div id="output"></div>
+<section>
+  <button id="btn">Click Event</button>
+</section>
 
-<h2>Input Example</h2>
-<input id="nameBox" placeholder="enter name">
-<button id="showName">Show Name</button>
-<p id="nameResult"></p>
+<section>
+  <button id="runExamples">Run Console Examples</button>
+  <p id="output"></p>
+</section>
 
-<h2>Color Change</h2>
-<button id="colorBtn">Change Background</button>
+<section>
+  <h3>Input value</h3>
+  <input id="nameBox" placeholder="enter name">
+  <button id="showName">Show Name</button>
+  <p id="nameResult"></p>
+</section>
 
-<h2>List Example</h2>
-<ul id="listBox"></ul>
-<button id="addItem">Add Item</button>
+<section>
+  <h3>Background color</h3>
+  <button id="colorBtn">Change Background</button>
+</section>
 
-<h2>Image Example</h2>
-<img id="img1" src="prafulla.png">
-<button id="changeImg">Change Image</button>
+<section>
+  <h3>List example</h3>
+  <ul id="listBox"></ul>
+  <button id="addItem">Add Item</button>
+</section>
 
-<h2>Text Change</h2>
-<p id="text1">Old Text</p>
-<button id="changeText">Change Text</button>
+<section>
+  <h3>Image change</h3>
+  <img id="img1" src="prafulla.png">
+  <button id="changeImg">Change Image</button>
+</section>
 
-<h2>Show/Hide Box</h2>
-<div id="box" style="width:100px;height:100px;background:lightgray;"></div>
-<button id="toggleBox">Show/Hide</button>
+<section>
+  <h3>Text change</h3>
+  <p id="text1">Old Text</p>
+  <button id="changeText">Change Text</button>
+</section>
 
-<h2>Simple Form</h2>
-<input id="email" placeholder="email">
-<input id="pass" placeholder="password" type="password">
-<button id="loginBtn">Login</button>
-<p id="loginResult"></p>
+<section>
+  <h3>Show hide box</h3>
+  <div id="box"></div>
+  <button id="toggleBox">Show / Hide</button>
+</section>
 
-<script src="script.js"></script>
+<section>
+  <h3>Simple login</h3>
+  <input id="email" placeholder="email">
+  <input id="pass" type="password" placeholder="password">
+  <button id="loginBtn">Login</button>
+  <p id="loginResult"></p>
+</section>
+
+<section>
+  <h3>Counter</h3>
+  <button id="inc">+</button>
+  <button id="dec">-</button>
+  <p id="count">0</p>
+</section>
+
+<section>
+  <h3>Checkbox example</h3>
+  <input type="checkbox" id="chk"> Accept
+  <p id="chkResult"></p>
+</section>
+
+<section>
+  <h3>Select box</h3>
+  <select id="sel">
+    <option value="">choose</option>
+    <option>Red</option>
+    <option>Green</option>
+    <option>Blue</option>
+  </select>
+  <p id="selOut"></p>
+</section>
+
+<section>
+  <h3>Keyboard event</h3>
+  <input id="keyBox" placeholder="type here">
+  <p id="keyOut"></p>
+</section>
+
+<script>
+  let a=10
+  let b=5
+  console.log(a+b)
+
+  let btn=document.getElementById("btn")
+  btn.onclick=function(){
+    console.log("button clicked")
+  }
+
+  document.getElementById("runExamples").onclick=function(){
+    document.getElementById("output").innerText="check console"
+  }
+
+  document.getElementById("showName").onclick=function(){
+    let v=document.getElementById("nameBox").value
+    document.getElementById("nameResult").innerText=v
+  }
+
+  document.getElementById("colorBtn").onclick=function(){
+    document.body.style.backgroundColor=
+    "rgb("+Math.floor(Math.random()*255)+","+
+    Math.floor(Math.random()*255)+","+
+    Math.floor(Math.random()*255)+")"
+  }
+
+  document.getElementById("addItem").onclick=function(){
+    let li=document.createElement("li")
+    li.innerText="item "+Math.floor(Math.random()*100)
+    document.getElementById("listBox").appendChild(li)
+  }
+
+  document.getElementById("changeImg").onclick=function(){
+    document.getElementById("img1").src="https://via.placeholder.com/150"
+  }
+
+  document.getElementById("changeText").onclick=function(){
+    document.getElementById("text1").innerText="new text added"
+  }
+
+  document.getElementById("toggleBox").onclick=function(){
+    let b=document.getElementById("box")
+    b.style.display=b.style.display=="none"?"block":"none"
+  }
+
+  document.getElementById("loginBtn").onclick=function(){
+    let e=document.getElementById("email").value
+    let p=document.getElementById("pass").value
+    if(e==""||p==""){
+      document.getElementById("loginResult").innerText="fill all"
+    }else{
+      document.getElementById("loginResult").innerText="login ok"
+    }
+  }
+
+  let c=0
+  document.getElementById("inc").onclick=function(){
+    c++
+    document.getElementById("count").innerText=c
+  }
+  document.getElementById("dec").onclick=function(){
+    c--
+    document.getElementById("count").innerText=c
+  }
+
+  document.getElementById("chk").onclick=function(){
+    document.getElementById("chkResult").innerText=
+    this.checked?"checked":"not checked"
+  }
+
+  document.getElementById("sel").onchange=function(){
+    document.getElementById("selOut").innerText=this.value
+  }
+
+  document.getElementById("keyBox").onkeyup=function(){
+    document.getElementById("keyOut").innerText=this.value
+  }
+</script>
+
 </body>
 </html>
-
-
-

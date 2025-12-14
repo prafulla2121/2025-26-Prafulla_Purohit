@@ -3,38 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML -links Practice</title>
+    <title>HTML Links Practice</title>
+    <style>
+        body{
+            font-family: Arial;
+            background:#f0f0f0;
+            padding:20px;
+        }
+
+        h1{
+            text-align:center;
+            background:#3f51b5;
+            color:white;
+            padding:10px;
+        }
+
+        h2{
+            background:#e3f2fd;
+            padding:6px;
+        }
+
+        h3{
+            color:#333;
+        }
+
+        .box{
+            background:white;
+            padding:15px;
+            margin-bottom:25px;
+            border-left:5px solid #3f51b5;
+        }
+
+        a{
+            color:#1a73e8;
+            text-decoration:none;
+        }
+
+        a:hover{
+            text-decoration:underline;
+        }
+
+        img{
+            border:2px solid #999;
+        }
+    </style>
 </head>
 <body>
-    <!--this is first html comment-->
-    <!--heding tags-->
-    <h1>Prafulla is Running </h1>
-    <h2>Prafulla is running</h2>
-    <h3>Prafulla is running</h3>
-    <h4>Prafulla is running</h4>
-    <h5>Prafulla is running</h5>
-    <h6>Prafulla is running</h6>
-  
 
-<p> Links all  examples </p>
+<h1>HTML LINKS PRACTICE</h1>
 
+<!-- heading tags -->
+<div class="box">
+<h2>Heading Tags</h2>
+<h1>Prafulla is Running</h1>
+<h2>Prafulla is running</h2>
+<h3>Prafulla is running</h3>
+<h4>Prafulla is running</h4>
+<h5>Prafulla is running</h5>
+<h6>Prafulla is running</h6>
+</div>
+
+<div class="box">
+<p>Links all examples</p>
+</div>
 
 <!-- Basic Link -->
+<div class="box">
 <h2>Simple Link</h2>
 <p>This goes to a tech blog I like:</p>
 <a href="https://developer.mozilla.org">MDN Web Docs</a>
-
+</div>
 
 <!-- Target Attribute -->
+<div class="box">
 <h2>Links With Target</h2>
 <p>Open in new tab:</p>
 <a href="https://github.com" target="_blank">Github</a>
 
 <p>Open same tab:</p>
 <a href="https://news.ycombinator.com" target="_self">Hacker News</a>
-
+</div>
 
 <!-- Absolute & Relative URLs -->
+<div class="box">
 <h2>Absolute and Relative Links</h2>
 
 <h3>Absolute URLs</h3>
@@ -44,35 +95,33 @@
 <h3>Relative URLs</h3>
 <a href="profile.html">My Profile Page</a><br>
 <a href="notes/today.html">Today's Notes</a>
-
+</div>
 
 <!-- Image as Link -->
+<div class="box">
 <h2>Image as a Link</h2>
-<p>Click the image to go to my gallery page (just practice):</p>
+<p>Click the image to go to my gallery page:</p>
 <a href="gallery.html">
     <img src="myphoto.png" alt="My Photo" width="80" height="80">
 </a>
-
+</div>
 
 <!-- Email Link -->
-<h2>5. Email Link</h2>
+<div class="box">
+<h2>Email Link</h2>
 <p>This opens the default email app:</p>
-<a href="mailto:prafulpurohit917@gmail.com">Mail-Prafulla</a>
-
-
-
-
+<a href="mailto:prafulpurohit917@gmail.com">Mail Prafulla</a>
+</div>
 
 <!-- Title Attribute -->
-<h2>Link With Title (Tooltip)</h2>
-<a href="https://github.com" title="My favorite code hosting site">
-    Visit GitHub
-</a>
-
+<div class="box">
+<h2>Link With Title</h2>
+<a href="https://github.com" title="My favorite code hosting site">Visit GitHub</a>
+</div>
 
 <!-- Bookmark Links -->
-<h2>Bookmark Links (Same Page Jump)</h2>
-
+<div class="box">
+<h2>Bookmark Links</h2>
 <a href="#bottom">Go to Bottom of Page</a><br>
 <a href="#section2">Jump to Section 2</a>
 
@@ -81,13 +130,7 @@
 
 <h3 id="bottom">Bottom Section</h3>
 <p>You reached the bottom of the page.</p>
+</div>
 
-
-
-
-
-
-
-    
 </body>
 </html>

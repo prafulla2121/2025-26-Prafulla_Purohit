@@ -2,192 +2,167 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Custom Attribute </title>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Custom Attribute Practice</title>
 
     <style>
+        body {
+            font-family: Arial;
+        }
         .box {
-            width: 200px;
+            border: 1px solid #555;
             padding: 10px;
-            border: 1px solid #444;
-            margin-bottom: 12px;
+            margin: 10px 0;
+            width: 250px;
+        }
+        button {
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
 
+<h2>Custom Attribute simple practice</h2>
 
-
-
-<!-- 1. Basic custom attribute -->
-<div id="basic" class="box" data-info="Hello Prafulla">
-    Basic custom attribute example (data-info)
+<div id="d1" class="box" data-name="Prafulla">
+    Student name stored
 </div>
-
-<button onclick="basicExample()">Get Basic Data</button>
+<button onclick="showName()">Show Name</button>
 
 <script>
-function basicExample(){
-    let v = document.getElementById("basic").dataset.info;
-    alert("data-info = " + v);
+function showName() {
+    alert(document.getElementById("d1").dataset.name);
 }
 </script>
 
 <hr>
 
-<!-- 2. Using jQuery .data() -->
-<div id="jq1" class="box" data-user="Prafulla" data-id="1001">
-    jQuery data() example
+<div id="d2" class="box" data-age="22">
+    Student age stored
 </div>
-<button id="btn1">Get using jQuery</button>
+<button onclick="showAge()">Show Age</button>
 
 <script>
-$("#btn1").click(function(){
-    var user = $("#jq1").data("user");
-    var id = $("#jq1").data("id");
-    alert("User = " + user + " , ID = " + id);
-});
-</script>
-
-<hr>
-
-<!-- 3. Setting custom attribute dynamically -->
-<div id="setAttr" class="box">
-    Click button to set custom attribute
-</div>
-
-<button onclick="setAttrNow()">Set Custom Attribute</button>
-
-<script>
-function setAttrNow(){
-    document.getElementById("setAttr").setAttribute("data-status", "active");
-    alert("Custom attribute set: data-status = active");
+function showAge() {
+    let a = document.getElementById("d2").dataset.age;
+    alert("Age is " + a);
 }
 </script>
 
 <hr>
 
-<!-- 4. Updating a custom attribute -->
-<div id="updateAttr" data-score="5" class="box">
-    Score starts at 5 (data-score)
+<div id="d3" class="box" data-status="offline">
+    User status
 </div>
-
-<button onclick="updateScore()">Increase Score</button>
+<button onclick="changeStatus()">Change Status</button>
 
 <script>
-function updateScore(){
-    let box = document.getElementById("updateAttr");
-    let current = parseInt(box.dataset.score);
-    box.dataset.score = current + 1;
-    alert("New score = " + box.dataset.score);
+function changeStatus() {
+    let box = document.getElementById("d3");
+    box.dataset.status = "online";
+    alert("Status changed to online");
 }
 </script>
 
 <hr>
 
-<!-- 5. Boolean custom attribute -->
-<div id="bool" class="box" data-approved="true">
-    Boolean data-approved
-</div>
-<button onclick="checkBool()">Check Boolean</button>
+<button data-msg="Hello Good Morning" onclick="readBtn(this)">
+    Click Button
+</button>
 
 <script>
-function checkBool(){
-    let val = document.getElementById("bool").dataset.approved;
-    alert("Approved? = " + val);
+function readBtn(btn) {
+    alert(btn.dataset.msg);
 }
 </script>
 
 <hr>
 
-<!-- 6. JSON in custom attribute -->
-<div id="jsonBox" class="box"
-     data-user='{"name":"Prafulla","age":22,"city":"Mumbai"}'>
-    JSON stored in data-user
-</div>
-
-<button onclick="readJSON()">Read JSON</button>
-
-<script>
-function readJSON(){
-    let raw = document.getElementById("jsonBox").dataset.user;
-    let obj = JSON.parse(raw);
-    alert("Name: " + obj.name + ", Age: " + obj.age + ", City: " + obj.city);
-}
-</script>
-
-<hr>
-
-<!-- 7. Custom attribute for images -->
-<img src="prafulla.png" width="120"
-     id="img1"
-     data-caption="This is Prafulla's image"
-     class="box">
-
-<button onclick="showImgData()">Show Image Data</button>
-
-<script>
-function showImgData(){
-    let caption = document.getElementById("img1").dataset.caption;
-    alert("Image Caption = " + caption);
-}
-</script>
-
-<hr>
-
-<!-- 8. Custom attribute in list items -->
 <ul>
-    <li data-price="10">Item A</li>
-    <li data-price="20">Item B</li>
-    <li data-price="30">Item C</li>
+    <li data-marks="70">Math</li>
+    <li data-marks="65">Science</li>
+    <li data-marks="80">English</li>
 </ul>
 
-<button onclick="sumList()">Total Price</button>
+<button onclick="totalMarks()">Total Marks</button>
 
 <script>
-function sumList(){
-    let items = document.querySelectorAll("li");
+function totalMarks() {
     let total = 0;
-    items.forEach(li => {
-        total += parseInt(li.dataset.price);
+    document.querySelectorAll("li").forEach(item => {
+        total += parseInt(item.dataset.marks);
     });
-    alert("Total Price = " + total);
+    alert("Total = " + total);
 }
 </script>
 
 <hr>
 
-<!-- 9. Custom attributes in form inputs -->
-<input type="text" id="username" data-rule="no-space" class="box"
-       placeholder="Type something">
+<img src="prafulla.png" width="100"
+     id="img"
+     data-info="Profile Picture">
 
-<button onclick="checkRule()">Check Rule</button>
+<button onclick="imgInfo()">Image Info</button>
 
 <script>
-function checkRule(){
-    let rule = document.getElementById("username").dataset.rule;
-    alert("Rule Applied: " + rule);
+function imgInfo() {
+    alert(document.getElementById("img").dataset.info);
 }
 </script>
 
 <hr>
 
-<!-- 10. Non-standard custom attribute (allowed but not recommended) -->
-<div id="weird" class="box" customattr="hello123">
-    Custom attribute without data- prefix
+<input type="text" id="inp" data-type="username" placeholder="Enter username">
+<button onclick="checkInput()">Check Input</button>
+
+<script>
+function checkInput() {
+    let t = document.getElementById("inp").dataset.type;
+    alert("Input type is " + t);
+}
+</script>
+
+<hr>
+
+<div id="colorBox" class="box" data-color="lightblue">
+    Color box
 </div>
-
-<button onclick="readWeird()">Read Weird Attr</button>
+<button onclick="applyColor()">Apply Color</button>
 
 <script>
-function readWeird(){
-    let v = document.getElementById("weird").getAttribute("customattr");
-    alert("customattr = " + v);
+function applyColor() {
+    let c = document.getElementById("colorBox").dataset.color;
+    document.getElementById("colorBox").style.background = c;
 }
 </script>
 
+<hr>
 
+<div id="login" class="box" data-login="false">
+    Login status
+</div>
+<button onclick="loginUser()">Login</button>
+
+<script>
+function loginUser() {
+    let b = document.getElementById("login");
+    b.dataset.login = "true";
+    alert("User logged in");
+}
+</script>
+
+<hr>
+
+<div id="raw" class="box" customvalue="sample123">
+    Non data attribute
+</div>
+<button onclick="readRaw()">Read Value</button>
+
+<script>
+function readRaw() {
+    let v = document.getElementById("raw").getAttribute("customvalue");
+    alert(v);
+}
+</script>
 
 </body>
 </html>
