@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>x</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+.a{color:red}
+.b{background:yellow}
+.c{border:2px solid black}
+.d{display:none}
+.box{width:60px;height:60px;background:green;margin:5px;position:relative}
+.err{color:red;font-size:12px}
+</style>
+</head>
+<body>
+
+<h1 id="h">test</h1>
+
+<p class="p">aa</p>
+<p class="p">bb</p>
+<p class="p">cc</p>
+
+<input id="i1">
+<input id="i2">
+<input id="i3" type="number">
+
+<select id="s">
+<option></option>
+<option>red</option>
+<option>blue</option>
+<option>black</option>
+</select>
+
+<button id="b1">1</button>
+<button id="b2">2</button>
+<button id="b3">3</button>
+<button id="b4">4</button>
+<button id="b5">5</button>
+
+<div class="box"></div>
+<div class="box"></div>
+
+<ul id="u">
+<li>x</li>
+<li>y</li>
+</ul>
+
+<form id="f">
+<input id="n">
+<span id="ne" class="err"></span><br>
+<input id="e">
+<span id="ee" class="err"></span><br>
+<input id="p" type="password">
+<span id="pe" class="err"></span><br>
+<input type="checkbox" id="c">ok
+<span id="ce" class="err"></span><br>
+<button>go</button>
+</form>
+
+<div id="r"></div>
+
+<script>
+$(function(){
+
+$("#b1").click(function(){$(".p").hide()})
+$("#b2").click(function(){$(".p").show()})
+$("#b3").click(function(){$(".p").toggle()})
+$("#b4").click(function(){$(".p").fadeToggle(200)})
+$("#b5").click(function(){$(".p").slideToggle(200)})
+
+$("#i1").keyup(function(){$("#h").text($(this).val())})
+$("#i2").blur(function(){$(".p:first").text($(this).val())})
+$("#i3").change(function(){$(".box").width($(this).val())})
+
+$("#s").change(function(){$(".box").css("background",$(this).val())})
+
+$(".p").click(function(){$(this).toggleClass("a")})
+$(".p").dblclick(function(){$(this).toggleClass("b")})
+$(".p").mouseenter(function(){$(this).toggleClass("c")})
+
+$(".box").click(function(){
+$(this).animate({left:"+=40",height:"+=10",width:"+=10",opacity:0.5})
+})
+
+$(".box").mouseleave(function(){$(this).stop()})
+
+$("#u").append("<li>z</li>")
+$("#u").prepend("<li>w</li>")
+
+$("#u li").click(function(){$(this).remove()})
+
+$("#u").on("dblclick","li",function(){$(this).css("font-size","30px")})
+
+$("#f").submit(function(e){
+e.preventDefault()
+let ok=true
+$(".err").text("")
+
+if($("#n").val()==""){ok=false;$("#ne").text("x")}
+if($("#e").val().indexOf("@")==-1){ok=false;$("#ee").text("x")}
+if($("#p").val().length<5){ok=false;$("#pe").text("x")}
+if(!$("#c").is(":checked")){ok=false;$("#ce").text("x")}
+
+if(ok){
+$("#r").text("done")
+$("#f")[0].reset()
+}
+})
+
+$("body").keydown(function(e){
+if(e.key=="Escape"){$(".box").css("left","0")}
+})
+
+$("body").contextmenu(function(e){
+e.preventDefault()
+$("#r").text("right")
+})
+
+setTimeout(function(){$(".p:last").fadeOut()},1500)
+
+setInterval(function(){
+$(".box:first").toggleClass("d")
+},2000)
+
+})
+</script>
+
+</body>
+</html>
